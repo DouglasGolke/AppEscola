@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "489368118139",
+    "firebase_url": "https://appescola-dg2004.firebaseio.com",
+    "project_id": "appescola-dg2004",
+    "storage_bucket": "appescola-dg2004.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489368118139:android:08cab43cb53af78d",
+        "android_client_info": {
+          "package_name": "br.com.appescola.appescola"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489368118139-s6q1rduj90vfgnqfc62po0j753qb1cf0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.appescola.appescola",
+            "certificate_hash": "9ad4735e5411d1aa4c1d61fdf4a2b6b4ab179ab2"
+          }
+        },
+        {
+          "client_id": "489368118139-5c2o59vfmfj0s1426ah5pn9afgh0br3i.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "489368118139-5c2o59vfmfj0s1426ah5pn9afgh0br3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4-FvBSV_A9f7X-5L3HUVU9fLdIOol7QA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "489368118139-5c2o59vfmfj0s1426ah5pn9afgh0br3i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

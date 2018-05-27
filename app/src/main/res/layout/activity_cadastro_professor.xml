@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.CadastroProfessorActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MATRÍCULA"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                />
+            <EditText
+                android:id="@+id/edtCadMatricula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NOME"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                />
+            <EditText
+                android:id="@+id/edtCadNome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SOBRENOME"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                />
+            <EditText
+                android:id="@+id/edtCadSobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DISCIPLINAS"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                />
+
+            <EditText
+                android:id="@+id/edtCadDsiciplinas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ANIVERSÁRIO"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                />
+            <EditText
+                android:id="@+id/edtCadAniversario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="EMAIL"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                />
+            <EditText
+                android:id="@+id/edtCadEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SENHA"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                />
+            <EditText
+                android:id="@+id/edtCadSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONFIRMA SENHA"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                />
+            <EditText
+                android:id="@+id/edtCadConfirmarSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Leciona mais de uma disciplina?"/>
+
+            <RadioGroup
+                android:id="@+id/rgSexo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbSim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="SIM" />
+
+                <RadioButton
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/rbNao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="NÃO" />
+
+            </RadioGroup>
+
+            <Button
+                android:layout_marginTop="15dp"
+                android:id="@+id/btnGravar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CADASTRAR DADOS" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
