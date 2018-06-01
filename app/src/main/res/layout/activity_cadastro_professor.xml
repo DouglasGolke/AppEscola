@@ -94,19 +94,28 @@
                 android:id="@+id/edtCadFisica"
                 />
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Clique para inserir a data de nascimento"
+                android:id="@+id/btnCalendario"
+                />
+
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="ANIVERSÁRIO"
+                android:text="DATA NASCIMENTO"
                 android:textStyle="bold"
                 android:textSize="13sp"
                 />
+
             <EditText
                 android:id="@+id/edtCadAniversario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date" />
+                android:inputType="date"
+                />
 
             <TextView
                 android:layout_width="match_parent"

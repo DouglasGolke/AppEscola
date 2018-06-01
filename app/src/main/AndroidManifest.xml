@@ -27,6 +27,7 @@
         <activity android:name=".Activity.CadastroActivity" />
         <activity android:name=".Activity.LoginProfessorActivity" />
         <activity android:name=".Activity.CadastroProfessorActivity"></activity>
+        <activity android:name=".Activity.CalendarioActivity"></activity>
     </application>
 
 </manifest>

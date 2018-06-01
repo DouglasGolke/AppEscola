@@ -44,6 +44,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
     private RadioButton rbSim;
     private RadioButton rbNao;
     private Button btnGravar;
+    private Button btnCalendar;
     private Professores professores;
     private FirebaseAuth autenticacao;
 
@@ -58,7 +59,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
         edtCadPortugues = (CheckBox) findViewById(R.id.edtCadPortugues);
         edtCadGeografia = (CheckBox) findViewById(R.id.edtCadGeografia);
         edtCadHistoria = (CheckBox) findViewById(R.id.edtCadHistoria);
-        edtCadMatricula = (EditText) findViewById(R.id.edtCadMatricula);
+//        edtCadMatricula = (EditText) findViewById(R.id.edtCadMatricula);
         edtCadEmail = (EditText) findViewById(R.id.edtCadEmail);
         edtCadNome = (EditText) findViewById(R.id.edtCadNome);
         edtCadSobrenome = (EditText) findViewById(R.id.edtCadSobrenome);
@@ -68,7 +69,19 @@ public class CadastroProfessorActivity extends AppCompatActivity {
         rbSim = (RadioButton) findViewById(R.id.rbSim);
         rbNao = (RadioButton) findViewById(R.id.rbNao);
         btnGravar = (Button) findViewById(R.id.btnGravar);
+        btnCalendar = (Button)findViewById(R.id.btnCalendario);
 
+        Intent intentdate = getIntent();
+        String date = intentdate.getStringExtra("date");
+        edtCadAnivesario.setText(date);
+
+        btnCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(CadastroProfessorActivity.this, CalendarioActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btnGravar.setOnClickListener(new View.OnClickListener() {
             @Override
