@@ -1,5 +1,10 @@
 package br.com.appescola.appescola.Entidades;
 
+import android.database.DataSetObserver;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 
@@ -9,7 +14,7 @@ import java.util.Map;
 
 import br.com.appescola.appescola.DAO.ConfiguracaoFirebase;
 
-public class Professores {
+public class Professores implements ListAdapter {
 
     private String id;
     private String matricula;
@@ -19,7 +24,11 @@ public class Professores {
     private String sobrenome;
     private String aniversario;
     private String maisMateria;
-    private String disciplinas;
+    private String historia;
+    private String matematica;
+    private String geografia;
+    private String fisica;
+    private String portugues;
 
     public Professores() {
     }
@@ -41,7 +50,11 @@ public class Professores {
         hashMapUsuario.put("sobrenome", getSobrenome());
         hashMapUsuario.put("aniversario", getAniversario());
         hashMapUsuario.put("maisMateria", getMaisMateria());
-        hashMapUsuario.put("disciplinas", getDisciplinas());
+        hashMapUsuario.put("fisica", getFisica());
+        hashMapUsuario.put("matematica", getMatematica());
+        hashMapUsuario.put("historia", getHistoria());
+        hashMapUsuario.put("geografia", getGeografia());
+        hashMapUsuario.put("portugues", getPortugues());
 
         return hashMapUsuario;
 
@@ -111,11 +124,103 @@ public class Professores {
         this.maisMateria = maisMateria;
     }
 
-    public String getDisciplinas() {
-        return disciplinas;
+    public String getPortugues() {
+        return portugues;
     }
 
-    public void setDisciplinas(String disciplinas) {
-        this.disciplinas = disciplinas;
+    public void setPortugues(String portugues) {
+        this.portugues = portugues;
+    }
+
+    public String getMatematica() {
+        return matematica;
+    }
+
+    public void setMatematica(String matematica) {
+        this.matematica = matematica;
+    }
+
+    public String getGeografia() {
+        return geografia;
+    }
+
+    public void setGeografia(String geografia) {
+        this.geografia = geografia;
+    }
+
+    public String getHistoria() {
+        return historia;
+    }
+
+    public void setHistoria(String historia) {
+        this.historia = historia;
+    }
+
+    public String getFisica() {
+        return fisica;
+    }
+
+    public void setFisica(String fisica) {
+        this.fisica = fisica;
+    }
+
+    @Override
+    public boolean areAllItemsEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
+    }
+
+    @Override
+    public void registerDataSetObserver(DataSetObserver observer) {
+
+    }
+
+    @Override
+    public void unregisterDataSetObserver(DataSetObserver observer) {
+
+    }
+
+    @Override
+    public int getCount() {
+        return 0;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return 0;
+    }
+
+    @Override
+    public boolean hasStableIds() {
+        return false;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return null;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return 0;
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
     }
 }

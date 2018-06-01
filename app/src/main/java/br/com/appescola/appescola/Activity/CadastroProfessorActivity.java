@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -28,7 +29,6 @@ import br.com.appescola.appescola.R;
 
 public class CadastroProfessorActivity extends AppCompatActivity {
 
-    private EditText edtCadDisciplinas;
     private EditText edtCadEmail;
     private EditText edtCadMatricula;
     private EditText edtCadNome;
@@ -36,6 +36,11 @@ public class CadastroProfessorActivity extends AppCompatActivity {
     private EditText edtCadSenha;
     private EditText edtCadConfirmaSenha;
     private EditText edtCadAnivesario;
+    private CheckBox edtCadHistoria;
+    private CheckBox edtCadMatematica;
+    private CheckBox edtCadPortugues;
+    private CheckBox edtCadGeografia;
+    private CheckBox edtCadFisica;
     private RadioButton rbSim;
     private RadioButton rbNao;
     private Button btnGravar;
@@ -48,7 +53,11 @@ public class CadastroProfessorActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_professor);
 
-        edtCadDisciplinas = (EditText) findViewById(R.id.edtCadDsiciplinas);
+        edtCadMatematica = (CheckBox) findViewById(R.id.edtCadMatematica);
+        edtCadFisica = (CheckBox) findViewById(R.id.edtCadFisica);
+        edtCadPortugues = (CheckBox) findViewById(R.id.edtCadPortugues);
+        edtCadGeografia = (CheckBox) findViewById(R.id.edtCadGeografia);
+        edtCadHistoria = (CheckBox) findViewById(R.id.edtCadHistoria);
         edtCadMatricula = (EditText) findViewById(R.id.edtCadMatricula);
         edtCadEmail = (EditText) findViewById(R.id.edtCadEmail);
         edtCadNome = (EditText) findViewById(R.id.edtCadNome);
@@ -69,7 +78,6 @@ public class CadastroProfessorActivity extends AppCompatActivity {
                     boolean valido = true;
                     professores = new Professores();
 
-                    professores.setDisciplinas(edtCadDisciplinas.getText().toString());
                     professores.setMatricula(edtCadMatricula.getText().toString());
                     professores.setNome(edtCadNome.getText().toString());
                     professores.setEmail(edtCadEmail.getText().toString());
@@ -81,6 +89,36 @@ public class CadastroProfessorActivity extends AppCompatActivity {
                         professores.setMaisMateria("Sim, leciona mais disciplinas");
                     } else {
                         professores.setMaisMateria("Não, leciona uma disciplina");
+                    }
+
+                    if (edtCadMatematica.isChecked()) {
+                        professores.setMatematica("Matematica");
+                    } else {
+                        professores.setMatematica("");
+                    }
+
+                    if (edtCadPortugues.isChecked()) {
+                        professores.setPortugues("Portugues");
+                    } else {
+                        professores.setPortugues("");
+                    }
+
+                    if (edtCadFisica.isChecked()) {
+                        professores.setFisica("Fisica");
+                    } else {
+                        professores.setFisica("");
+                    }
+
+                    if (edtCadGeografia.isChecked()) {
+                        professores.setGeografia("Geografia");
+                    } else {
+                        professores.setGeografia("");
+                    }
+
+                    if (edtCadHistoria.isChecked()) {
+                        professores.setHistoria("Historia");
+                    } else {
+                        professores.setHistoria("");
                     }
 
                     if (professores.getEmail().equals("")){

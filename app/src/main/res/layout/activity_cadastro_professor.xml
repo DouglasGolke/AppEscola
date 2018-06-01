@@ -58,18 +58,44 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="DISCIPLINAS"
+                android:text="SELECIONE AS DISCIPLINAS QUE LECIONA"
                 android:textStyle="bold"
                 android:textSize="13sp"
                 />
 
-            <EditText
-                android:id="@+id/edtCadDsiciplinas"
+            <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text" />
+                android:text="História"
+                android:id="@+id/edtCadHistoria"
+                />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Matemática"
+                android:id="@+id/edtCadMatematica"
+                />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Português"
+                android:id="@+id/edtCadPortugues"
+                />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Geografia"
+                android:id="@+id/edtCadGeografia"
+                />
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Física"
+                android:id="@+id/edtCadFisica"
+                />
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ANIVERSÁRIO"
