@@ -1,5 +1,6 @@
 package br.com.appescola.appescola.Activity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -20,6 +22,8 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Calendar;
+
 import br.com.appescola.appescola.DAO.ConfiguracaoFirebase;
 import br.com.appescola.appescola.Entidades.Professores;
 import br.com.appescola.appescola.Entidades.Usuarios;
@@ -27,7 +31,7 @@ import br.com.appescola.appescola.Helper.Base64Custom;
 import br.com.appescola.appescola.Helper.PreferenciasAndroid;
 import br.com.appescola.appescola.R;
 
-public class CadastroProfessorActivity extends AppCompatActivity {
+public class CadastroProfessorActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText edtCadEmail;
     private EditText edtCadMatricula;
@@ -45,6 +49,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
     private RadioButton rbNao;
     private Button btnGravar;
     private Button btnCalendar;
+    private  int dia,mes,ano;
     private Professores professores;
     private FirebaseAuth autenticacao;
 
@@ -59,7 +64,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
         edtCadPortugues = (CheckBox) findViewById(R.id.edtCadPortugues);
         edtCadGeografia = (CheckBox) findViewById(R.id.edtCadGeografia);
         edtCadHistoria = (CheckBox) findViewById(R.id.edtCadHistoria);
-//        edtCadMatricula = (EditText) findViewById(R.id.edtCadMatricula);
+        edtCadMatricula = (EditText) findViewById(R.id.edtCadMatricula);
         edtCadEmail = (EditText) findViewById(R.id.edtCadEmail);
         edtCadNome = (EditText) findViewById(R.id.edtCadNome);
         edtCadSobrenome = (EditText) findViewById(R.id.edtCadSobrenome);
@@ -71,17 +76,13 @@ public class CadastroProfessorActivity extends AppCompatActivity {
         btnGravar = (Button) findViewById(R.id.btnGravar);
         btnCalendar = (Button)findViewById(R.id.btnCalendario);
 
-        Intent intentdate = getIntent();
-        String date = intentdate.getStringExtra("date");
-        edtCadAnivesario.setText(date);
+//        Intent intentdate = getIntent();
+//        String date = intentdate.getStringExtra("date");
+//        edtCadAnivesario.setText(date);
 
-        btnCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(CadastroProfessorActivity.this, CalendarioActivity.class);
-                startActivity(intent);
-            }
-        });
+      btnCalendar.setOnClickListener(this);
+
+
 
         btnGravar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -224,5 +225,22 @@ public class CadastroProfessorActivity extends AppCompatActivity {
         Intent intent = new Intent(CadastroProfessorActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void onClick(View v) {
+        final Calendar c= Calendar.getInstance();
+        dia=c.get(Calendar.DAY_OF_MONTH);
+        mes=c.get(Calendar.MONTH);
+        ano=c.get(Calendar.YEAR);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                edtCadAnivesario.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+            }
+        }
+                ,dia,mes,ano);
+        datePickerDialog.show();
     }
 }
